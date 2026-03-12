@@ -211,40 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Showreel scroll animation ---
-    gsap.from('.showreel-player', {
-        scale: 0.95,
-        opacity: 0,
-        duration: 1.2,
-        ease: 'power2.out',
-        scrollTrigger: {
-            trigger: '.showreel-player',
-            start: 'top 85%',
-            once: true
-        }
-    });
-
-    // --- Showreel Play/Close ---
-    const showreelPoster = document.getElementById('showreelPoster');
-    const showreelVideo = document.getElementById('showreelVideo');
-    const showreelIframe = document.getElementById('showreelIframe');
-    const showreelClose = document.getElementById('showreelClose');
-    // Placeholder Vimeo showreel — replace with Decaf Media's actual showreel URL
-    const showreelUrl = 'https://player.vimeo.com/video/824804225?autoplay=1&title=0&byline=0&portrait=0';
-
-    showreelPoster.addEventListener('click', () => {
-        showreelPoster.style.display = 'none';
-        showreelVideo.style.display = 'block';
-        showreelIframe.src = showreelUrl;
-    });
-
-    showreelClose.addEventListener('click', (e) => {
-        e.stopPropagation();
-        showreelVideo.style.display = 'none';
-        showreelIframe.src = '';
-        showreelPoster.style.display = 'block';
-    });
-
     // --- Horizontal Video Carousel (GSAP ScrollTrigger) ---
     const carouselSection = document.querySelector('.carousel-section');
     const carouselTrack = document.querySelector('.carousel-track');
@@ -370,17 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             }
         });
-    });
-
-    // --- Parallax for showreel on scroll ---
-    gsap.to('.showreel-player', {
-        y: -30,
-        scrollTrigger: {
-            trigger: '.showreel',
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: 1.5
-        }
     });
 
     // --- Footer animation ---
