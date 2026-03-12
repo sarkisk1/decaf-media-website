@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project — Decaf Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/project.css">
+    <link rel="icon" type="image/png" href="assets/logo_nb_white.png">
+</head>
+<body>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <span class="cursor-text" id="cursorText"></span>
+    </div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav scrolled" id="nav">
+        <a href="index.html#hero" class="nav-logo">
+            <img src="assets/logo_trimmed.png" alt="Decaf Media" />
+        </a>
+        <div class="nav-links">
+            <a href="index.html#work" class="nav-link">Work</a>
+            <a href="index.html#about" class="nav-link">About</a>
+            <a href="index.html#services" class="nav-link">Services</a>
+            <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-content">
+            <a href="index.html#hero" class="menu-link" data-index="01">Home</a>
+            <a href="index.html#work" class="menu-link" data-index="02">Work</a>
+            <a href="index.html#about" class="menu-link" data-index="03">About</a>
+            <a href="index.html#services" class="menu-link" data-index="04">Services</a>
+            <a href="index.html#contact" class="menu-link" data-index="05">Contact</a>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-footer-col">
+                <span class="menu-footer-label">Location</span>
+                <span>London, UK</span>
+            </div>
+            <div class="menu-footer-col">
+                <span class="menu-footer-label">Email</span>
+                <span>hello@decaf.co.uk</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Hero -->
+    <section class="project-hero" id="projectHero">
+        <img class="project-hero-img" id="projectHeroImg" src="" alt="">
+        <div class="project-hero-overlay"></div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+        <div class="container">
+            <div class="project-header">
+                <div class="project-meta-bar">
+                    <a href="index.html#work" class="project-back">&larr; Back to Work</a>
+                </div>
+                <span class="project-category" id="projectCategory"></span>
+                <h1 class="project-title" id="projectTitle"></h1>
+                <div class="project-details">
+                    <div class="project-detail">
+                        <span class="project-detail-label">Client</span>
+                        <span class="project-detail-value" id="projectClient"></span>
+                    </div>
+                    <div class="project-detail">
+                        <span class="project-detail-label">Category</span>
+                        <span class="project-detail-value" id="projectType"></span>
+                    </div>
+                    <div class="project-detail">
+                        <span class="project-detail-label">Year</span>
+                        <span class="project-detail-value" id="projectYear"></span>
+                    </div>
+                    <div class="project-detail">
+                        <span class="project-detail-label">Role</span>
+                        <span class="project-detail-value" id="projectRole"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-body">
+                <p class="project-description" id="projectDescription"></p>
+            </div>
+
+            <!-- Project Gallery -->
+            <div class="project-gallery" id="projectGallery"></div>
+
+            <!-- Next/Prev Navigation -->
+            <div class="project-nav">
+                <a class="project-nav-link project-nav-prev" id="projectPrev" href="#">
+                    <span class="project-nav-label">&larr; Previous</span>
+                    <span class="project-nav-title" id="prevTitle"></span>
+                </a>
+                <a class="project-nav-link project-nav-next" id="projectNext" href="#">
+                    <span class="project-nav-label">Next &rarr;</span>
+                    <span class="project-nav-title" id="nextTitle"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <span>&copy; 2026 Decaf Media. All rights reserved.</span>
+                <a href="index.html#contact" class="back-to-top">Get in Touch &rarr;</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/projects-data.js"></script>
+    <script src="js/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decaf Media — Award-Winning Production Company</title>
+    <meta name="description" content="Decaf Media is an award-winning production company based in London, specialising in film, commercials, animation, and music videos.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="assets/logo_nb_white.png">
+</head>
+<body>
+
+    <!-- Film Grain Overlay -->
+    <div class="grain"></div>
+
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <img src="assets/logo_nb_white.png" alt="Decaf Media" class="loader-logo">
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+        </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor">
+        <span class="cursor-text" id="cursorText"></span>
+    </div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav-logo">
+            <img src="assets/logo_trimmed.png" alt="Decaf Media" />
+        </a>
+        <div class="nav-links">
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Open menu">
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-overlay-content">
+            <a href="#hero" class="menu-link" data-index="01">Home</a>
+            <a href="#work" class="menu-link" data-index="02">Work</a>
+            <a href="#about" class="menu-link" data-index="03">About</a>
+            <a href="#services" class="menu-link" data-index="04">Services</a>
+            <a href="#contact" class="menu-link" data-index="05">Contact</a>
+        </div>
+        <div class="menu-overlay-footer">
+            <div class="menu-footer-col">
+                <span class="menu-footer-label">Location</span>
+                <span>London, UK</span>
+            </div>
+            <div class="menu-footer-col">
+                <span class="menu-footer-label">Email</span>
+                <span>hello@decaf.co.uk</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <video class="hero-video" autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?w=1920&q=80">
+                <source src="https://cdn.coverr.co/videos/coverr-a-hand-holding-a-clapperboard-3953/1080p.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <img src="assets/logo_nb_white.png" alt="Decaf Media" class="hero-logo">
+            <h1 class="hero-headline">
+                <span class="hero-line"><span class="hero-line-inner">We craft stories</span></span>
+                <span class="hero-line"><span class="hero-line-inner">that <em>move</em> people</span></span>
+            </h1>
+            <div class="hero-meta">
+                <span class="hero-accent">Award-Winning Production</span>
+                <span class="hero-divider"></span>
+                <span class="hero-location">London</span>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <div class="hero-scroll-line"></div>
+            <span class="hero-scroll-text">Scroll</span>
+        </div>
+    </section>
+
+    <!-- Showreel Section -->
+    <section class="showreel" id="showreel">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label anim-fade-up">Showreel 2026</span>
+                <h2 class="section-title anim-fade-up">See our <em>latest</em> work</h2>
+            </div>
+            <div class="showreel-player" id="showreelPlayer">
+                <div class="showreel-poster" id="showreelPoster">
+                    <img src="assets/showreel-poster.jpg" alt="Decaf Media Showreel" loading="eager">
+                    <div class="showreel-play-overlay">
+                        <div class="play-ring">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 28" fill="none">
+                                    <path d="M2 1L23 14L2 27V1Z" fill="#C9A96E"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="play-label">Play Showreel</span>
+                    </div>
+                </div>
+                <div class="showreel-video" id="showreelVideo" style="display:none;">
+                    <iframe id="showreelIframe" src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <button class="showreel-close" id="showreelClose" aria-label="Close video">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M18 6L6 18M6 6l12 12" stroke="#F0EDE6" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work Section -->
+    <section class="work" id="work">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label anim-fade-up">Selected Work</span>
+                <h2 class="section-title anim-fade-up">Featured<br>Projects</h2>
+            </div>
+
+            <!-- Filter -->
+            <div class="work-filters anim-fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="film">Film</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+                <button class="filter-btn" data-filter="music-video">Music Video</button>
+            </div>
+
+            <!-- Staggered Grid -->
+            <div class="work-grid">
+                <a href="project.html#puma-fc-krasnodar" class="work-item work-item-large" data-category="commercial" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?w=900&q=80" alt="Puma x FC Krasnodar">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Commercial</span>
+                        <h3 class="work-item-title">Puma x FC Krasnodar</h3>
+                        <span class="work-item-year">2024</span>
+                    </div>
+                </a>
+                <a href="project.html#nike-just-do-it" class="work-item work-item-small" data-category="commercial" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1594909122845-11baa439b7bf?w=600&q=80" alt="Nike Campaign">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Commercial</span>
+                        <h3 class="work-item-title">Nike — Just Do It</h3>
+                        <span class="work-item-year">2024</span>
+                    </div>
+                </a>
+                <a href="project.html#krasnodar-documentary" class="work-item work-item-small" data-category="film" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=600&q=80" alt="Krasnodar Documentary">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Film</span>
+                        <h3 class="work-item-title">Krasnodar — Documentary</h3>
+                        <span class="work-item-year">2023</span>
+                    </div>
+                </a>
+                <a href="project.html#orpheus-eurydice" class="work-item work-item-small" data-category="animation" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&q=80" alt="Orpheus & Eurydice">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Animation</span>
+                        <h3 class="work-item-title">Orpheus & Eurydice</h3>
+                        <span class="work-item-year">2023</span>
+                    </div>
+                </a>
+                <a href="project.html#echoes-live-session" class="work-item work-item-large" data-category="music-video" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=900&q=80" alt="Echoes — Music Video">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Music Video</span>
+                        <h3 class="work-item-title">Echoes — Live Session</h3>
+                        <span class="work-item-year">2025</span>
+                    </div>
+                </a>
+                <a href="project.html#wanderlust-travel" class="work-item work-item-small" data-category="commercial" data-cursor="View">
+                    <div class="work-item-media">
+                        <img src="https://images.unsplash.com/photo-1500051638674-ff996a0ec29e?w=600&q=80" alt="Wanderlust Travel">
+                    </div>
+                    <div class="work-item-info">
+                        <span class="work-item-category">Commercial</span>
+                        <h3 class="work-item-title">Wanderlust — Travel</h3>
+                        <span class="work-item-year">2025</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="work-cta anim-fade-up">
+                <a href="#work" class="btn-outline magnetic">View All Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Horizontal Scroll Marquee -->
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-inner">
+                <span>Film</span>
+                <span class="marquee-dot"></span>
+                <span>Commercial</span>
+                <span class="marquee-dot"></span>
+                <span>Animation</span>
+                <span class="marquee-dot"></span>
+                <span>Music Video</span>
+                <span class="marquee-dot"></span>
+                <span>Documentary</span>
+                <span class="marquee-dot"></span>
+                <span>Short Film</span>
+                <span class="marquee-dot"></span>
+                <span>Film</span>
+                <span class="marquee-dot"></span>
+                <span>Commercial</span>
+                <span class="marquee-dot"></span>
+                <span>Animation</span>
+                <span class="marquee-dot"></span>
+                <span>Music Video</span>
+                <span class="marquee-dot"></span>
+                <span>Documentary</span>
+                <span class="marquee-dot"></span>
+                <span>Short Film</span>
+                <span class="marquee-dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-label anim-fade-up">About</span>
+                    <h2 class="section-title anim-fade-up">Crafting visual<br>stories since<br><em>2015</em></h2>
+                    <p class="about-text anim-fade-up">
+                        Decaf Media is an award-winning, full-service production company based in London.
+                        We specialise in creating compelling visual narratives across all stages of production —
+                        from concept to final delivery.
+                    </p>
+                    <p class="about-text anim-fade-up">
+                        Our work spans commercials, branded content, documentaries, animation, and music videos
+                        for clients who demand craft, creativity, and cinematic quality.
+                    </p>
+                    <div class="about-stats anim-fade-up">
+                        <div class="stat">
+                            <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Projects Delivered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="12">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Awards Won</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number" data-count="30">0</span><span class="stat-suffix">+</span>
+                            <span class="stat-label">Global Clients</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image anim-fade-up">
+                    <img src="assets/about-photo.jpg" alt="Decaf Media Production">
+                    <div class="about-image-accent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label anim-fade-up">What We Do</span>
+                <h2 class="section-title anim-fade-up">Full-service <em>production</em></h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card anim-fade-up">
+                    <div class="service-header">
+                        <span class="service-number">01</span>
+                        <h3 class="service-title">Commercials &<br>Branded Content</h3>
+                    </div>
+                    <p class="service-desc">From concept to delivery, we create compelling brand stories that resonate with audiences and drive results.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card anim-fade-up">
+                    <div class="service-header">
+                        <span class="service-number">02</span>
+                        <h3 class="service-title">Film &<br>Documentary</h3>
+                    </div>
+                    <p class="service-desc">Cinematic storytelling at its finest. Feature films, short films, and documentaries crafted with precision.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card anim-fade-up">
+                    <div class="service-header">
+                        <span class="service-number">03</span>
+                        <h3 class="service-title">Animation &<br>Motion Graphics</h3>
+                    </div>
+                    <p class="service-desc">2D, 3D, and motion graphics that bring ideas to life with fluidity and creative vision.</p>
+                    <div class="service-line"></div>
+                </div>
+                <div class="service-card anim-fade-up">
+                    <div class="service-header">
+                        <span class="service-number">04</span>
+                        <h3 class="service-title">Music Videos &<br>Live Sessions</h3>
+                    </div>
+                    <p class="service-desc">Visual experiences that amplify the music. Bold creative direction paired with flawless execution.</p>
+                    <div class="service-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="clients">
+        <div class="container">
+            <div class="section-header section-header-center">
+                <span class="section-label anim-fade-up">Trusted By</span>
+            </div>
+            <div class="clients-marquee">
+                <div class="clients-marquee-inner">
+                    <span class="client-logo">PUMA</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">NIKE</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">FC KRASNODAR</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">ADIDAS</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">BBC</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">CHANNEL 4</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">PUMA</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">NIKE</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">FC KRASNODAR</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">ADIDAS</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">BBC</span>
+                    <span class="client-sep">/</span>
+                    <span class="client-logo">CHANNEL 4</span>
+                    <span class="client-sep">/</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label anim-fade-up">Get in Touch</span>
+                    <h2 class="section-title anim-fade-up">Let's create<br>something<br><em>extraordinary</em></h2>
+                    <div class="contact-details anim-fade-up">
+                        <div class="contact-detail">
+                            <span class="contact-detail-label">Email</span>
+                            <a href="mailto:hello@decaf.co.uk">hello@decaf.co.uk</a>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-detail-label">Location</span>
+                            <p>London, United Kingdom</p>
+                        </div>
+                        <div class="contact-detail">
+                            <span class="contact-detail-label">Follow</span>
+                            <div class="social-links">
+                                <a href="#" class="social-link">Instagram</a>
+                                <a href="#" class="social-link">Vimeo</a>
+                                <a href="#" class="social-link">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap anim-fade-up">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required autocomplete="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="project">Project Type</label>
+                            <select id="project" name="project">
+                                <option value="" disabled selected>Select a type</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="film">Film</option>
+                                <option value="animation">Animation</option>
+                                <option value="music-video">Music Video</option>
+                                <option value="documentary">Documentary</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell us about your project</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary magnetic">
+                            <span>Send Enquiry</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10h12M12 4l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-large-text anim-fade-up">
+                <a href="#hero">DECAF<span>MEDIA</span></a>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo_nb_white.png" alt="Decaf Media" class="footer-logo">
+                    <p class="footer-tagline">Award-winning production.<br>Based in London.</p>
+                </div>
+                <div class="footer-nav">
+                    <span class="footer-nav-label">Navigation</span>
+                    <a href="#work">Work</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-nav">
+                    <span class="footer-nav-label">Services</span>
+                    <a href="#work" data-filter-link="film">Film</a>
+                    <a href="#work" data-filter-link="commercial">Commercial</a>
+                    <a href="#work" data-filter-link="animation">Animation</a>
+                    <a href="#work" data-filter-link="music-video">Music Video</a>
+                </div>
+                <div class="footer-nav">
+                    <span class="footer-nav-label">Social</span>
+                    <a href="#">Instagram</a>
+                    <a href="#">Vimeo</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Decaf Media. All rights reserved.</span>
+                <a href="#hero" class="back-to-top magnetic">Back to Top &uarr;</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
