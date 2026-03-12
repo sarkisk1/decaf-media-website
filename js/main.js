@@ -245,54 +245,46 @@ document.addEventListener('DOMContentLoaded', () => {
         showreelPoster.style.display = 'block';
     });
 
-    // --- Work items stagger ---
-    const workItems = document.querySelectorAll('.work-item');
-    workItems.forEach((item, i) => {
-        gsap.from(item, {
-            opacity: 0,
-            y: 80,
-            duration: 1,
-            delay: i * 0.08,
-            ease: 'power2.out',
+    // --- Horizontal Video Carousel (GSAP ScrollTrigger) ---
+    const carouselSection = document.querySelector('.carousel-section');
+    const carouselTrack = document.querySelector('.carousel-track');
+
+    if (carouselSection && carouselTrack && window.innerWidth > 768) {
+        // Calculate scroll distance from widest row
+        const rows = carouselTrack.querySelectorAll('.carousel-row');
+        let maxRowWidth = 0;
+        rows.forEach(row => {
+            maxRowWidth = Math.max(maxRowWidth, row.scrollWidth);
+        });
+        const scrollDistance = maxRowWidth - window.innerWidth + 20;
+
+        gsap.to(carouselTrack, {
+            x: -scrollDistance,
+            ease: 'none',
             scrollTrigger: {
-                trigger: item,
-                start: 'top 90%',
-                once: true
+                trigger: carouselSection,
+                pin: true,
+                scrub: 1,
+                end: () => `+=${scrollDistance}`,
+                invalidateOnRefresh: true
             }
         });
-    });
+    }
 
-    // --- Portfolio Filter ---
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const allWorkItems = document.querySelectorAll('.work-item');
-
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const filter = btn.dataset.filter;
-
-            allWorkItems.forEach(item => {
-                if (filter === 'all' || item.dataset.category === filter) {
-                    gsap.to(item, {
-                        opacity: 1,
-                        scale: 1,
-                        duration: 0.5,
-                        ease: 'power2.out',
-                        display: 'block'
-                    });
+    // --- Video autoplay management ---
+    const carouselVideos = document.querySelectorAll('.carousel-item video');
+    if ('IntersectionObserver' in window) {
+        const videoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.play().catch(() => {});
                 } else {
-                    gsap.to(item, {
-                        opacity: 0,
-                        scale: 0.95,
-                        duration: 0.3,
-                        ease: 'power2.in',
-                        onComplete: () => { item.style.display = 'none'; }
-                    });
+                    entry.target.pause();
                 }
             });
-        });
-    });
+        }, { threshold: 0.1 });
+        carouselVideos.forEach(video => videoObserver.observe(video));
+    }
 
     // --- Service cards stagger ---
     const serviceCards = document.querySelectorAll('.service-card');
@@ -372,13 +364,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const href = this.getAttribute('href');
             const target = document.querySelector(href);
             if (target) {
-                // If this link has a filter category, activate that filter immediately
-                const filterCategory = this.dataset.filterLink;
-                if (filterCategory) {
-                    const filterBtn = document.querySelector(`.filter-btn[data-filter="${filterCategory}"]`);
-                    if (filterBtn) filterBtn.click();
-                }
-
                 lenis.scrollTo(target, {
                     offset: -80,
                     duration: 1.5
